@@ -15,8 +15,10 @@ body {
 ======================== */
 .hero-title {
     position: absolute;
-    top: 6%;
+    top: 5%;
+    font-size: clamp(32px, 4vw, 52px);
     width: 100%;
+    padding: 0 20px;
     text-align: center;
     font-size: 44px;
     letter-spacing: 3px;
@@ -30,8 +32,10 @@ body {
 
 .hero-subtitle {
     position: absolute;
-    top: 15%;  /* ← más abajo */
+    top: 12%;  /* ← más abajo */
     width: 100%;
+    font-size: clamp(14px, 1.5vw, 20px);
+    padding: 0 20px;
     text-align: center;
     font-size: 18px;
     opacity: 0.85;
@@ -140,9 +144,9 @@ body {
     top: 0;
     left: 0;
 
-    width: 75px;
-    height: 75px;
-    margin: -37.5px;
+    width: 100px;
+    height: 100px;
+    margin: -50px;
 
     border-radius: 50%;
 
@@ -153,6 +157,10 @@ body {
     font-size: 12px;
     font-weight: bold;
     color: white;
+
+    text-shadow: 
+        0 0 4px rgba(0,0,0,0.7),
+        0 0 6px rgba(0,0,0,0.5);
 
     background-size: cover;
     background-position: center;
@@ -185,13 +193,14 @@ body {
 ======================== */
 
 .p1 { animation-delay: 0s; }
-.p2 { animation-delay: -7.5s; }
-.p3 { animation-delay: -15s; }
-.p4 { animation-delay: -22.5s; }
-.p5 { animation-delay: -30s; }
-.p6 { animation-delay: -37.5s; }
-.p7 { animation-delay: -45s; }
-.p8 { animation-delay: -52.5s; }
+.p2 { animation-delay: -6.67s; }
+.p3 { animation-delay: -13.34s; }
+.p4 { animation-delay: -20.01s; }
+.p5 { animation-delay: -26.68s; }
+.p6 { animation-delay: -33.35s; }
+.p7 { animation-delay: -40.02s; }
+.p8 { animation-delay: -46.69s; }
+.p9 { animation-delay: -53.36s; }
 
 /* ========================
    HOVER
@@ -243,5 +252,9 @@ body {
 
 .p8 {
     background-image: url("../assets/viabilidad.jpg");
+    background-position: center 40%;
+}
+.p9 {
+    background-image: url("../assets/conclusion.jpg");
     background-position: center 40%;
 }
