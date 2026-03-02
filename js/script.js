@@ -1,3 +1,68 @@
+// ========================
+// SONIDOS INTERACTIVOS Y MUSICA DE FONDO PERSISTENTE
+// ========================
+
+// ---------- Elementos de audio ----------
+const hoverSound = document.getElementById("hover-sound");
+const clickSound = document.getElementById("click-sound");
+const bgMusic = document.getElementById("bg-music");
+
+// ---------- Volúmenes ----------
+hoverSound.volume = 0.3;
+clickSound.volume = 0.5;
+bgMusic.volume = 0.2; // música de fondo más baja
+bgMusic.loop = true;
+
+// ---------- Música de fondo persistente ----------
+const savedTime = localStorage.getItem("bgMusicTime");
+if (savedTime) {
+    bgMusic.currentTime = parseFloat(savedTime);
+}
+
+// Intentar autoplay (fallará en algunos navegadores)
+bgMusic.play().catch(() => {
+    document.body.addEventListener("click", () => bgMusic.play(), { once: true });
+});
+
+// Guardar tiempo actual cada segundo
+setInterval(() => {
+    localStorage.setItem("bgMusicTime", bgMusic.currentTime);
+}, 1000);
+
+// ---------- Funciones de sonidos ----------
+function playHover() {
+    hoverSound.currentTime = 0;
+    hoverSound.play();
+}
+
+function playClick() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+}
+
+// ---------- HOVER EN ELEMENTOS INTERACTIVOS ----------
+document.querySelectorAll(".planet, .star-item").forEach(el => {
+    el.addEventListener("mouseenter", playHover);
+});
+
+// ---------- CLICK EN ELEMENTOS INTERACTIVOS / NAVEGACION ----------
+document.querySelectorAll(".planet, .back-btn").forEach(el => {
+    el.addEventListener("click", function(e) {
+        const link = this.href;
+        e.preventDefault();
+
+        // Sonar click antes de cambiar página
+        playClick();
+
+        // Guardar tiempo actual inmediatamente
+        localStorage.setItem("bgMusicTime", bgMusic.currentTime);
+
+        // Micro-delay para que el sonido se reproduzca
+        setTimeout(() => {
+            window.location.href = link;
+        }, 100);
+    });
+});
 const canvas = document.getElementById("space-canvas");
 const ctx = canvas.getContext("2d");
 
