@@ -1,0 +1,247 @@
+/* ========================
+   BASE
+======================== */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at center, #0d1b2a 0%, #000 100%);
+    color: white;
+}
+
+/* ========================
+   HERO
+======================== */
+.hero-title {
+    position: absolute;
+    top: 6%;
+    width: 100%;
+    text-align: center;
+    font-size: 44px;
+    letter-spacing: 3px;
+    z-index: 20;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.9),
+        0 0 30px rgba(0,150,255,0.8),
+        0 0 60px rgba(0,150,255,0.6);
+}
+
+.hero-subtitle {
+    position: absolute;
+    top: 15%;  /* ← más abajo */
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    opacity: 0.85;
+    z-index: 20;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.5);
+}
+
+/* ========================
+   ESTRELLAS
+======================== */
+
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+    z-index: -2;
+}
+
+.twinkling {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent url("https://www.transparenttextures.com/patterns/dark-matter.png") repeat;
+    animation: moveStars 200s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: 10000px 5000px; }
+}
+
+/* Capa extra de estrellas pequeñas */
+
+.stars2 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent url("https://www.transparenttextures.com/patterns/asfalt-dark.png") repeat;
+    animation: moveStarsFast 120s linear infinite;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+@keyframes moveStarsFast {
+    from { background-position: 0 0; }
+    to { background-position: -8000px 4000px; }
+}
+
+/* ========================
+   SISTEMA SOLAR
+======================== */
+
+.solar-system {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ========================
+   LOGO CENTRAL
+======================== */
+
+.center-logo {
+    position: absolute;
+    width: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    filter: drop-shadow(0 0 25px rgba(255,255,255,0.6))
+            drop-shadow(0 0 60px rgba(0,150,255,0.8))
+            drop-shadow(0 0 120px rgba(0,150,255,0.5));
+
+    animation: corePulse 5s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+    0%   { transform: translate(-50%, -50%) scale(1); }
+    50%  { transform: translate(-50%, -50%) scale(1.05); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ========================
+   ÓRBITA (centro real)
+======================== */
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/* ========================
+   PLANETAS
+======================== */
+
+.planet {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 75px;
+    height: 75px;
+    margin: -37.5px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,0.2),
+        0 0 20px rgba(0,150,255,0.25);
+
+    animation: orbitPlanet 60s linear infinite;
+    
+}
+
+/* ========================
+   ANIMACIÓN REAL
+   (orbita + texto recto)
+======================== */
+
+@keyframes orbitPlanet {
+    from {
+        transform: rotate(0deg) translateX(210px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(210px) rotate(-360deg);
+    }
+}
+
+/* ========================
+   SEPARACIÓN PERFECTA 45°
+======================== */
+
+.p1 { animation-delay: 0s; }
+.p2 { animation-delay: -7.5s; }
+.p3 { animation-delay: -15s; }
+.p4 { animation-delay: -22.5s; }
+.p5 { animation-delay: -30s; }
+.p6 { animation-delay: -37.5s; }
+.p7 { animation-delay: -45s; }
+.p8 { animation-delay: -52.5s; }
+
+/* ========================
+   HOVER
+======================== */
+
+/* ========================
+   HOVER PRO
+======================== */
+
+.planet {
+    transition: 
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        filter 0.4s ease;
+}
+
+.planet:hover {
+    transform: scale(1.25);
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.6),
+        0 0 40px rgba(0,150,255,0.9),
+        0 0 80px rgba(0,150,255,0.6);
+    filter: brightness(1.2) saturate(1.2);
+}
+
+/* ========================
+   BRILLO SUPERFICIAL
+======================== */
+
+.planet::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), transparent 60%);
+}
+
+/* ========================
+   TEXTURAS
+======================== */
+
+.p1 { background-image: url("../assets/introduccion.jpg"); }
+.p2 { background-image: url("../assets/mercado.jpg"); }
+.p3 { background-image: url("../assets/valor.jpg"); }
+.p4 { background-image: url("../assets/monetizacion.jpg"); }
+.p5 { background-image: url("../assets/tecnologia.jpg"); }
+.p6 { background-image: url("../assets/seguridad.jpg"); }
+.p7 { background-image: url("../assets/ux.jpg"); }
+
+.p8 {
+    background-image: url("../assets/viabilidad.jpg");
+    background-position: center 40%;
+}
