@@ -4,10 +4,16 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: radial-gradient(circle at center, #0d1b2a 0%, #000 100%);
     color: white;
     overflow-x: hidden;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+h1, h2, h3, .section-subtitle {
+    font-family: 'Orbitron', sans-serif;
 }
 
 /* ========================
@@ -42,164 +48,217 @@ body {
 
 .intro-hero {
     text-align: center;
-    padding: 120px 20px 40px;
+    padding: 120px 20px 50px;
 }
 
 .intro-hero h1 {
-    font-size: 52px;
-    margin-bottom: 10px;
-    letter-spacing: 3px;
-
+    font-size: 56px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.1; /* 🔥 menos espacio entre líneas */
     text-shadow:
-        0 0 20px rgba(255,255,255,0.9),
-        0 0 60px rgba(0,150,255,0.8);
+        0 0 12px rgba(0, 180, 255, 0.7),
+        0 0 25px rgba(0, 150, 255, 0.4);
 }
 
 .intro-hero p {
     font-size: 20px;
-    opacity: 0.8;
-    letter-spacing: 1px;
+    color: #ffffff; /* 🔥 vuelve a blanco */
+    opacity: 0.9;
+    margin-top: 20px; /* un poco más separado del título */
 }
 
 /* ========================
-   TÍTULO PRINCIPAL
+   SECTION SUBTITLE
 ======================== */
 
-.main-section-title {
-    text-align: center;
-    font-size: 34px;
-    margin: 80px 0 50px;
-    letter-spacing: 2px;
-
-    color: #7ec8ff;
-
-    text-shadow:
-        0 0 15px rgba(0,150,255,0.8),
-        0 0 40px rgba(0,150,255,0.6);
-}
-
-/* ========================
-   SECCIONES
-======================== */
-
-.intro-section {
-    max-width: 1000px;
-    margin: 0 auto 120px auto;
-    padding: 0 20px;
-}
 .section-subtitle {
-    font-size: 26px;
-    margin: 80px 0 30px;
-    color: #7ec8ff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    margin: 50px 0 25px;
+
+    background: linear-gradient(
+        90deg,
+        #5ecbff,
+        #9fe8ff,
+        #5ecbff
+    );
+
+    background-size: 180% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: glowShift 8s linear infinite;
 
     text-shadow:
-        0 0 15px rgba(0,150,255,0.6);
+        0 0 8px rgba(0,150,255,0.4);
 }
+
+@keyframes glowShift {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
 /* ========================
-   CARDS MEJORADAS
+   CARDS
 ======================== */
 
 .glass-card {
-    margin: 60px 0;
-    padding: 60px;
-    border-radius: 30px;
+    margin: 40px 0;
+    padding: 45px 50px;
+    border-radius: 26px;
 
-    background: rgba(10,25,45,0.6);
-    backdrop-filter: blur(25px);
-
-    border: 1px solid rgba(126,200,255,0.25);
-
-    box-shadow:
-        0 0 60px rgba(0,150,255,0.15),
-        inset 0 0 30px rgba(255,255,255,0.05);
-
-    line-height: 1.8;
-    font-size: 18px;
-
-    transition: 0.4s ease;
-}
-
-.glass-card:hover {
-    transform: translateY(-6px);
-    box-shadow:
-        0 0 80px rgba(0,150,255,0.3),
-        inset 0 0 40px rgba(255,255,255,0.08);
-}
-
-.glass-card:hover {
-    transform: translateY(-8px);
-    box-shadow:
-        0 0 60px rgba(0,150,255,0.35),
-        inset 0 0 25px rgba(255,255,255,0.1);
-}
-
-/* ========================
-   CONSTELACIÓN (Lista creativa)
-======================== */
-
-.star-grid {
-    margin: 60px 0 80px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-}
-
-.star-item {
-    padding: 35px 20px;
-    border-radius: 25px;
-
-    background: linear-gradient(
-        145deg,
-        rgba(0,150,255,0.15),
-        rgba(0,40,80,0.6)
-    );
+    background: rgba(10,25,45,0.4);
+    backdrop-filter: blur(18px);
 
     border: 1px solid rgba(126,200,255,0.2);
 
     box-shadow:
-        0 0 25px rgba(0,150,255,0.2);
+        0 0 35px rgba(0,150,255,0.12);
 
-    transition: all 0.4s ease;
+    font-size: 17px;
+    transition: all 0.3s ease;
 }
 
-.star-item:hover {
-    transform: translateY(-8px) scale(1.06);
+.glass-card:hover {
+    transform: translateY(-4px);
     box-shadow:
-        0 0 50px rgba(0,150,255,0.5);
+        0 0 55px rgba(0,150,255,0.2);
 }
 
 /* ========================
-   WRAPPER GENERAL
+   STAR GRID
+======================== */
+
+.star-grid {
+    margin: 35px 0 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.star-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    padding: 26px 28px;
+    min-height: 130px;
+
+    border-radius: 20px;
+
+    background: rgba(15, 35, 60, 0.6);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(0, 180, 255, 0.25);
+
+    box-shadow:
+        0 0 18px rgba(0, 150, 255, 0.15);
+
+    transition: all 0.35s ease;
+}
+
+.star-item h4 {
+    margin: 0 0 12px 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: #7ec8ff;
+    letter-spacing: 1px;
+}
+
+.star-item p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.85);
+}
+
+/* Hover elegante (no gaming) */
+
+.star-item:hover {
+    transform: translateY(-6px);
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #eaf6ff
+    );
+
+    border: 1px solid rgba(0, 150, 255, 0.35);
+
+    box-shadow: 
+        0 0 25px rgba(180, 220, 255, 0.4);
+}
+
+.star-item:hover h4 {
+    color: #0b1f33;
+}
+
+.star-item:hover p {
+    color: #243b53;
+}
+
+/* ========================
+   WRAPPER
 ======================== */
 
 .page-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 40px 140px;
+    padding: 120px 40px 150px;
     position: relative;
     z-index: 2;
 }
 
 /* ========================
-   BOTÓN VOLVER
+   BOTÓN PREMIUM
 ======================== */
 
 .back-btn {
     position: fixed;
     bottom: 30px;
     left: 30px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
     text-decoration: none;
-    color: white;
-    background: rgba(0,150,255,0.3);
-    padding: 12px 22px;
+    color: #ffffff;
+
+    background: rgba(0,150,255,0.28);
+
+    padding: 14px 26px;
     border-radius: 30px;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
+
+    border: 1px solid rgba(0,200,255,0.35);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 
+        0 0 15px rgba(0,150,255,0.25);
+
+    transition: all 0.3s ease;
 }
 
 .back-btn:hover {
-    background: rgba(0,150,255,0.6);
+    background: rgba(255,255,255,0.9);
+    color: #0b1f33;
+
+    box-shadow:
+        0 0 25px rgba(200, 230, 255, 0.6);
 }
+
+/* ========================
+   CANVAS
+======================== */
 
 #space-canvas {
     position: fixed;
