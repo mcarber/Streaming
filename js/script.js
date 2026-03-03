@@ -1,177 +1,242 @@
-// ========================
-// SONIDOS INTERACTIVOS Y MUSICA DE FONDO PERSISTENTE
-// ========================
+document.addEventListener("DOMContentLoaded", function () {
 
-// ---------- Elementos de audio ----------
-const hoverSound = document.getElementById("hover-sound");
-const clickSound = document.getElementById("click-sound");
-const bgMusic = document.getElementById("bg-music");
+    // ========================
+    // ELEMENTOS
+    // ========================
 
-// ---------- Volúmenes ----------
-hoverSound.volume = 0.3;
-clickSound.volume = 0.5;
-bgMusic.volume = 0.2; // música de fondo más baja
-bgMusic.loop = true;
+    const hoverSound = document.getElementById("hover-sound");
+    const clickSound = document.getElementById("click-sound");
+    const bgMusic = document.getElementById("bg-music");
+    const soundToggle = document.getElementById("sound-toggle");
 
-// ---------- Música de fondo persistente ----------
-const savedTime = localStorage.getItem("bgMusicTime");
-if (savedTime) {
-    bgMusic.currentTime = parseFloat(savedTime);
-}
+    if (hoverSound) hoverSound.volume = 0.3;
+    if (clickSound) clickSound.volume = 0.5;
 
-// Intentar autoplay (fallará en algunos navegadores)
-bgMusic.play().catch(() => {
-    document.body.addEventListener("click", () => bgMusic.play(), { once: true });
-});
+    if (bgMusic) {
+        bgMusic.volume = 0.2;
+        bgMusic.loop = true;
+    }
 
-// Guardar tiempo actual cada segundo
-setInterval(() => {
-    localStorage.setItem("bgMusicTime", bgMusic.currentTime);
-}, 1000);
+    // ========================
+    // CONFIGURACIÓN INICIAL
+    // ========================
 
-// ---------- Funciones de sonidos ----------
-function playHover() {
-    hoverSound.currentTime = 0;
-    hoverSound.play();
-}
+    if (localStorage.getItem("soundEnabled") === null) {
+        localStorage.setItem("soundEnabled", "false");
+    }
 
-function playClick() {
-    clickSound.currentTime = 0;
-    clickSound.play();
-}
+    let soundEnabled = localStorage.getItem("soundEnabled") === "true";
 
-// ---------- HOVER EN ELEMENTOS INTERACTIVOS ----------
-document.querySelectorAll(".planet, .star-item").forEach(el => {
-    el.addEventListener("mouseenter", playHover);
-});
+    // Restaurar tiempo
+    if (bgMusic) {
+        const savedTime = localStorage.getItem("bgMusicTime");
+        if (savedTime) {
+            bgMusic.currentTime = parseFloat(savedTime);
+        }
+    }
 
-// ---------- CLICK EN ELEMENTOS INTERACTIVOS / NAVEGACION ----------
-document.querySelectorAll(".planet, .back-btn").forEach(el => {
-    el.addEventListener("click", function(e) {
-        const link = this.href;
-        e.preventDefault();
+    // ========================
+    // RESTAURAR ESTADO ENTRE PÁGINAS
+    // ========================
 
-        // Sonar click antes de cambiar página
-        playClick();
+    if (bgMusic && soundEnabled) {
+        bgMusic.play().then(() => {
+            if (soundToggle) soundToggle.textContent = "🔊";
+        }).catch(() => {
+            // Si el navegador bloquea autoplay,
+            // se activará cuando el usuario haga cualquier click
+        });
+    } else {
+        if (soundToggle) soundToggle.textContent = "🔇";
+    }
 
-        // Guardar tiempo actual inmediatamente
-        localStorage.setItem("bgMusicTime", bgMusic.currentTime);
+    // ========================
+    // BOTÓN SONIDO
+    // ========================
 
-        // Micro-delay para que el sonido se reproduzca
-        setTimeout(() => {
-            window.location.href = link;
-        }, 100);
+    if (soundToggle && bgMusic) {
+        soundToggle.addEventListener("click", function () {
+
+            soundEnabled = !soundEnabled;
+            localStorage.setItem("soundEnabled", soundEnabled);
+
+            if (soundEnabled) {
+                bgMusic.play().then(() => {
+                    soundToggle.textContent = "🔊";
+                }).catch(err => {
+                    console.log("Error al reproducir:", err);
+                });
+            } else {
+                bgMusic.pause();
+                soundToggle.textContent = "🔇";
+            }
+        });
+    }
+
+    // ========================
+    // GUARDAR TIEMPO CONTINUAMENTE
+    // ========================
+
+    if (bgMusic) {
+        setInterval(() => {
+            if (!bgMusic.paused) {
+                localStorage.setItem("bgMusicTime", bgMusic.currentTime);
+            }
+        }, 1000);
+    }
+
+    // ========================
+    // SONIDOS INTERACTIVOS
+    // ========================
+
+    function playHover() {
+        if (!hoverSound) return;
+        hoverSound.currentTime = 0;
+        hoverSound.play();
+    }
+
+    function playClick() {
+        if (!clickSound) return;
+        clickSound.currentTime = 0;
+        clickSound.play();
+    }
+
+    document.querySelectorAll(".planet, .star-item").forEach(el => {
+        el.addEventListener("mouseenter", playHover);
     });
-});
-const canvas = document.getElementById("space-canvas");
-const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    document.querySelectorAll(".planet, .back-btn").forEach(el => {
+        el.addEventListener("click", function (e) {
 
-let stars = [];
-let shootingStars = [];
-let mouseX = 0;
-let mouseY = 0;
+            if (!this.href) return;
 
-window.addEventListener("resize", () => {
+            const link = this.href;
+            e.preventDefault();
+
+            playClick();
+
+            if (bgMusic && !bgMusic.paused) {
+                localStorage.setItem("bgMusicTime", bgMusic.currentTime);
+            }
+
+            setTimeout(() => {
+                window.location.href = link;
+            }, 120);
+        });
+    });
+
+    // ========================
+    // CANVAS ESPACIAL
+    // ========================
+
+    const canvas = document.getElementById("space-canvas");
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-});
 
-window.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
+    let stars = [];
+    let shootingStars = [];
+    let mouseX = 0;
 
-class Star {
-    constructor() {
-        this.reset();
+    window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+
+    window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+    });
+
+    class Star {
+        constructor() { this.reset(); }
+
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.radius = Math.random() * 1.5;
+            this.speed = Math.random() * 0.3 + 0.05;
+            this.depth = Math.random() * 2;
+        }
+
+        update() {
+            this.y += this.speed;
+
+            if (this.y > canvas.height) {
+                this.reset();
+                this.y = 0;
+            }
+
+            this.x += (mouseX - canvas.width / 2) * 0.00002 * this.depth;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = "white";
+            ctx.fill();
+        }
     }
 
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.radius = Math.random() * 1.5;
-        this.speed = Math.random() * 0.3 + 0.05;
-        this.depth = Math.random() * 2;
-    }
-
-    update() {
-        this.y += this.speed;
-
-        if (this.y > canvas.height) {
-            this.reset();
+    class ShootingStar {
+        constructor() {
+            this.x = Math.random() * canvas.width;
             this.y = 0;
+            this.len = Math.random() * 80 + 50;
+            this.speed = Math.random() * 8 + 6;
+            this.angle = Math.PI / 4;
+            this.opacity = 1;
         }
 
-        // Parallax effect
-        this.x += (mouseX - canvas.width / 2) * 0.00002 * this.depth;
-    }
-
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
-        ctx.fill();
-    }
-}
-
-class ShootingStar {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = 0;
-        this.len = Math.random() * 80 + 50;
-        this.speed = Math.random() * 8 + 6;
-        this.angle = Math.PI / 4;
-        this.opacity = 1;
-    }
-
-    update() {
-        this.x += this.speed;
-        this.y += this.speed;
-        this.opacity -= 0.01;
-    }
-
-    draw() {
-        ctx.strokeStyle = `rgba(255,255,255,${this.opacity})`;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(this.x, this.y);
-        ctx.lineTo(
-            this.x - this.len * Math.cos(this.angle),
-            this.y - this.len * Math.sin(this.angle)
-        );
-        ctx.stroke();
-    }
-}
-
-for (let i = 0; i < 400; i++) {
-    stars.push(new Star());
-}
-
-function animate() {
-    ctx.fillStyle = "rgba(0, 0, 20, 0.8)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    stars.forEach(star => {
-        star.update();
-        star.draw();
-    });
-
-    shootingStars.forEach((star, index) => {
-        star.update();
-        star.draw();
-        if (star.opacity <= 0) {
-            shootingStars.splice(index, 1);
+        update() {
+            this.x += this.speed;
+            this.y += this.speed;
+            this.opacity -= 0.01;
         }
-    });
 
-    if (Math.random() < 0.003) {
-        shootingStars.push(new ShootingStar());
+        draw() {
+            ctx.strokeStyle = `rgba(255,255,255,${this.opacity})`;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y);
+            ctx.lineTo(
+                this.x - this.len * Math.cos(this.angle),
+                this.y - this.len * Math.sin(this.angle)
+            );
+            ctx.stroke();
+        }
     }
 
-    requestAnimationFrame(animate);
-}
+    for (let i = 0; i < 400; i++) {
+        stars.push(new Star());
+    }
 
-animate();
+    function animate() {
+        ctx.fillStyle = "rgba(0, 0, 20, 0.8)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        stars.forEach(star => {
+            star.update();
+            star.draw();
+        });
+
+        shootingStars.forEach((star, index) => {
+            star.update();
+            star.draw();
+            if (star.opacity <= 0) {
+                shootingStars.splice(index, 1);
+            }
+        });
+
+        if (Math.random() < 0.003) {
+            shootingStars.push(new ShootingStar());
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+});
