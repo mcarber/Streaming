@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Multiversal</title>
+<link rel="stylesheet" href="css/sim.css">
+</head>
+
+<body>
+
+<canvas id="space-canvas"></canvas>
+
+<!-- 🔝 NAV -->
+<header class="navbar">
+  <div class="logo">MULTIVERSAL</div>
+
+  <nav>
+    <a class="active">Inicio</a>
+    <a>Explorar</a>
+    <a>Mi contenido</a>
+  </nav>
+</header>
+
+<!-- 🌌 HERO CENTRAL -->
+<section class="home">
+
+  <div class="center">
+
+    <h1>MULTIVERSAL</h1>
+    <p>Explora universos narrativos completos</p>
+
+  </div>
+
+<div class="planet p1" onclick="openUniverse('starwars')"
+     style="background-image: url('assets/universos/starwars.jpg')">
+    <span>STAR WARS</span>
+</div>
+
+<div class="planet p2" onclick="openUniverse('harrypotter')"
+     style="background-image: url('assets/universos/harrypotter.jpg')">
+    <span>HARRY POTTER</span>
+</div>
+
+<div class="planet p3" onclick="openUniverse('simpsons')"
+     style="background-image: url('assets/universos/simpson.jpg')">
+    <span>SIMPSONS</span>
+</div>
+
+<div class="planet p4" onclick="openUniverse('pokemon')"
+     style="background-image: url('assets/universos/pokemon.jpg')">
+    <span>POKÉMON</span>
+</div>
+
+</div>
+
+</section>
+
+<script src="js/sim.js"></script>
+</body>
+</html>

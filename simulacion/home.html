@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Multiversal</title>
+<link rel="stylesheet" href="css/sim.css">
+</head>
+
+<body>
+
+<canvas id="space-canvas"></canvas>
+
+<header class="navbar">
+  <div class="logo">MULTIVERSAL</div>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a class="active">Universos</a>
+    <a>Explorar</a>
+    <a>Mi contenido</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>MULTIVERSAL</h1>
+    <p>Explora tus universos favoritos</p>
+    <button class="explore-btn">Explorar</button>
+  </div>
+</section>
+
+<section class="universos">
+
+  <div class="universo" onclick="openUniverse('starwars')">
+    <img src="assets/universos/starwars.jpg">
+    <span>Star Wars</span>
+  </div>
+
+  <div class="universo" onclick="openUniverse('harrypotter')">
+    <img src="assets/universos/harrypotter.jpg">
+    <span>Potterverse</span>
+  </div>
+
+  <div class="universo" onclick="openUniverse('simpsons')">
+    <img src="assets/universos/simpson.jpg">
+    <span>Los Simpson</span>
+  </div>
+
+  <div class="universo" onclick="openUniverse('pokemon')">
+    <img src="assets/universos/pokemon.jpg">
+    <span>Pokémon</span>
+  </div>
+
+</section>
+
+<!-- 🎬 CONTENIDO -->
+<section class="row">
+  <h2>Películas</h2>
+
+  <div class="cards">
+    <div class="card" onclick="openFicha('starwars')">
+      <img src="assets/covers/peliculas/starwars.jpg">
+    </div>
+
+    <div class="card" onclick="openFicha('harrypotter')">
+      <img src="assets/covers/peliculas/harrypotter.jpg">
+    </div>
+
+    <div class="card" onclick="openFicha('simpsons')">
+      <img src="assets/covers/peliculas/simpsons.jpg">
+    </div>
+
+    <div class="card" onclick="openFicha('pokemon')">
+      <img src="assets/covers/peliculas/pokemon.jpg">
+    </div>
+  </div>
+</section>
+
+<script src="js/sim.js"></script>
+</body>
+</html>

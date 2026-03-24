@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Universo</title>
+<link rel="stylesheet" href="css/sim.css">
+</head>
+
+<body>
+
+<canvas id="space-canvas"></canvas>
+
+<!-- 🔝 NAV -->
+<header class="navbar">
+  <div class="logo">MULTIVERSAL</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a class="active">Universo</a>
+  </nav>
+</header>
+
+<!-- 🌌 HERO -->
+<section class="universe-hero">
+
+  <img id="hero-img" src="assets/universos/starwars.jpg" class="hero-bg">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 id="titulo-universo">STAR WARS</h1>
+    <p id="descripcion-universo">Explora este universo narrativo</p>
+
+    <button class="follow-btn" onclick="toggleFollow()">
+      ⭐ Seguir universo
+    </button>
+  </div>
+
+</section>
+
+<!-- 🔎 FILTROS -->
+<section class="filters">
+
+  <select id="filtro-personaje">
+    <option value="all">Personajes</option>
+  </select>
+
+  <select id="filtro-epoca">
+    <option value="all">Época</option>
+  </select>
+
+</section>
+
+<!-- 🧠 TIMELINE (NUEVO) -->
+<section class="timeline">
+  <h2>Timeline cronológico</h2>
+
+  <div class="timeline-marvel">
+    <div class="timeline-line"></div>
+
+    <div id="timeline-container"></div>
+  </div>
+</section>
+
+<!-- 🎬 CONTENIDO CLÁSICO (TUYO) -->
+<section class="universe-section">
+  <h2>Películas</h2>
+  <div id="peliculas" class="cards"></div>
+</section>
+
+<section class="universe-section">
+  <h2>Series</h2>
+  <div id="series" class="cards"></div>
+</section>
+
+<section class="universe-section">
+  <h2>Videojuegos</h2>
+  <div id="juegos" class="cards"></div>
+</section>
+
+<section class="universe-section">
+  <h2>Libros</h2>
+  <div id="libros" class="cards"></div>
+</section>
+
+<!-- 👤 PERSONAJES -->
+<section class="characters">
+  <h2>Personajes</h2>
+  <div id="personajes" class="character-list"></div>
+</section>
+
+<!-- 🎯 RECOMENDACIONES -->
+<section class="recommendations">
+  <h2>Recomendado para ti</h2>
+  <div id="recommendations" class="cards"></div>
+</section>
+
+<script src="js/sim.js"></script>
+</body>
+</html>
