@@ -877,30 +877,67 @@ body {
     align-items: center;
     justify-content: center;
 
-    font-size: 12px;
-    color: white;
-
     background-size: cover;
     background-position: center;
 
     animation: orbitPlanet 40s linear infinite;
+
+    /* 🔥 MÁS CONTRASTE Y FUERZA */
+    filter: brightness(1.1) contrast(1.2);
+
+    /* 🎬 VOLUMEN REAL PERO LIMPIO */
+    box-shadow:
+        inset -20px -20px 40px rgba(0,0,0,0.8),
+        inset 10px 10px 25px rgba(255,255,255,0.1),
+        0 0 30px rgba(0,150,255,0.25);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
+.planet::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle,
+        rgba(0,150,255,0.4) 0%,
+        rgba(0,150,255,0.15) 40%,
+        transparent 70%
+    );
+
+    filter: blur(20px);
+    z-index: -1;
+    opacity: 0.7;
+}
+
+
+.planet:hover {
+    transform: scale(1.5);
+
+    box-shadow:
+        inset -30px -30px 60px rgba(0,0,0,1),
+        inset 15px 15px 50px rgba(255,255,255,0.2),
+        0 0 80px rgba(0,150,255,0.9),
+        0 0 160px rgba(0,150,255,0.7);
+}
+
 
 .planet span {
     position: absolute;
-    bottom: -40px;
+    bottom: -45px;
     left: 50%;
     transform: translateX(-50%);
 
     font-size: 14px;
-    font-weight: bold; /* 🔥 NEGRITA */
+    font-weight: bold;
     letter-spacing: 2px;
 
     white-space: nowrap;
 
     color: #ffffff;
 
-    /* ✨ EFECTO ILUMINADO */
     text-shadow:
         0 0 5px rgba(255,255,255,0.9),
         0 0 10px rgba(255,255,255,0.8),
@@ -911,6 +948,7 @@ body {
     opacity: 0.95;
 
     transition: 0.3s;
+    will-change: transform; /* 🔥 mejora rendimiento */
 }
 
 .planet:hover span {
@@ -921,8 +959,46 @@ body {
         0 0 80px rgba(0,150,255,0.9),
         0 0 120px rgba(0,150,255,0.8);
     
-    transform: translateX(-50%) scale(1.1);
+    transform: translateX(-50%) scale(1.15);
 }
+
+.main-planet {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    position: relative;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: radial-gradient(circle, #0a0a0a, #000);
+
+    /* 🎬 volumen */
+    box-shadow:
+        inset -30px -30px 60px rgba(0,0,0,0.9),
+        inset 10px 10px 30px rgba(255,255,255,0.1),
+        0 0 50px rgba(0,150,255,0.4);
+
+    transition: 0.4s;
+}
+
+.main-planet img {
+    width: 70%;
+    height: auto;
+
+    filter: brightness(1.2) contrast(1.2);
+
+    z-index: 2;
+}
+
+
+
+
 .p1 { animation-delay: 0s; }
 .p2 { animation-delay: -10s; }
 .p3 { animation-delay: -20s; }
@@ -931,9 +1007,9 @@ body {
 /* 🔥 ESTO ES LO QUE HACE QUE TODO FUNCIONE */
 @keyframes orbitPlanet {
     from {
-        transform: rotate(0deg) translateX(160px) rotate(0deg);
+        transform: rotate(0deg) translateX(230px) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(160px) rotate(-360deg);
+        transform: rotate(360deg) translateX(230px) rotate(-360deg);
     }
 }

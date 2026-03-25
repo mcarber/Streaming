@@ -55,7 +55,7 @@ h1, h2, h3, .section-subtitle {
     font-size: 56px;
     letter-spacing: 5px;
     text-transform: uppercase;
-    line-height: 1.1; /* 🔥 menos espacio entre líneas */
+    line-height: 1.1; /* menos espacio entre líneas */
     text-shadow:
         0 0 12px rgba(0, 180, 255, 0.7),
         0 0 25px rgba(0, 150, 255, 0.4);
@@ -63,7 +63,7 @@ h1, h2, h3, .section-subtitle {
 
 .intro-hero p {
     font-size: 20px;
-    color: #ffffff; /* 🔥 vuelve a blanco */
+    color: #ffffff; /* vuelve a blanco */
     opacity: 0.9;
     margin-top: 20px; /* un poco más separado del título */
 }
@@ -91,6 +91,7 @@ h1, h2, h3, .section-subtitle {
 
     background-size: 180% auto;
 
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
