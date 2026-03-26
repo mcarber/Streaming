@@ -77,7 +77,7 @@ const DATA = {
             personaje: "Homer",
             epoca: "inicio",
             descripcion: "Primeros años y evolución de personajes",
-            img: "assets/simpsons.jpg"
+            img: "assets/simpsons/temp1-3.jpg"
         },
 
         // 🟢 EDAD DORADA
@@ -88,7 +88,7 @@ const DATA = {
             personaje: "Homer",
             epoca: "dorado",
             descripcion: "Etapa más icónica y mejores episodios",
-            img: "assets/simpsons.jpg"
+            img: "assets/simpsons/temp4-9.jpg"
         },
 
         // 🔵 EXPANSIÓN
@@ -99,7 +99,7 @@ const DATA = {
             personaje: "Homer",
             epoca: "expansion",
             descripcion: "Popularidad global y cambios de estilo",
-            img: "assets/simpsons.jpg"
+            img: "assets/simpsons/temp10-15.jpeg"
         },
 
         // 🟣 MODERNO
@@ -110,7 +110,7 @@ const DATA = {
             personaje: "Homer",
             epoca: "moderno",
             descripcion: "Adaptación a nuevas audiencias",
-            img: "assets/simpsons.jpg"
+            img: "assets/simpsons/temp-16-25.jpg"
         },
 
         // 🔴 ACTUAL
@@ -121,7 +121,7 @@ const DATA = {
             personaje: "Homer",
             epoca: "actual",
             descripcion: "Era contemporánea y streaming",
-            img: "assets/simpsons.jpg"
+            img: "assets/simpsons/actual.jpeg"
         },
 
         // 🎬 PELÍCULA
@@ -132,27 +132,27 @@ const DATA = {
             personaje: "Homer",
             epoca: "dorado",
             descripcion: "Evento cinematográfico de la serie",
-            img: "assets/simpsons.jpg"
+            img: "assets/simpsons/movie.png"
         },
 
-        { titulo: "Simpsons Comics", año: 1993, tipo: "libro", personaje: "Bart", epoca: "clasico", descripcion: "Historias en cómic", img: "assets/simpsons.jpg" },
-        { titulo: "Bart Simpson Comics", año: 2000, tipo: "libro", personaje: "Bart", epoca: "clasico", descripcion: "Aventuras de Bart", img: "assets/simpsons.jpg" }
+        { titulo: "Simpsons Comics", año: 1993, tipo: "libro", personaje: "Bart", epoca: "clasico", descripcion: "Historias en cómic", img: "assets/simpsons/comic.jpg" },
+        { titulo: "Bart Simpson Comics", año: 2000, tipo: "libro", personaje: "Bart", epoca: "clasico", descripcion: "Aventuras de Bart", img: "assets/simpsons/bart_comic.jpeg" }
     
     ],
 
     personajes: [
 
-        { nombre: "Homer Simpson", actor: "Dan Castellaneta", img: "assets/simpsons.jpg" },
-        { nombre: "Marge Simpson", actor: "Julie Kavner", img: "assets/simpsons.jpg" },
-        { nombre: "Bart Simpson", actor: "Nancy Cartwright", img: "assets/simpsons.jpg" },
-        { nombre: "Lisa Simpson", actor: "Yeardley Smith", img: "assets/simpsons.jpg" },
-        { nombre: "Maggie Simpson", actor: "—", img: "assets/simpsons.jpg" },
+        { nombre: "Homer Simpson", actor: "Dan Castellaneta", img: "assets/simpsons/homer.jpg" },
+        { nombre: "Marge Simpson", actor: "Julie Kavner", img: "assets/simpsons/marge.jpg" },
+        { nombre: "Bart Simpson", actor: "Nancy Cartwright", img: "assets/simpsons/bart.jpg" },
+        { nombre: "Lisa Simpson", actor: "Yeardley Smith", img: "assets/simpsons/lisa.jpeg" },
+        { nombre: "Maggie Simpson", actor: "—", img: "assets/simpsons/maggie.jpg" },
 
-        { nombre: "Mr. Burns", actor: "Harry Shearer", img: "assets/simpsons.jpg" },
-        { nombre: "Ned Flanders", actor: "Harry Shearer", img: "assets/simpsons.jpg" },
-        { nombre: "Krusty", actor: "Dan Castellaneta", img: "assets/simpsons.jpg" },
-        { nombre: "Milhouse", actor: "Pamela Hayden", img: "assets/simpsons.jpg" },
-        { nombre: "Apu Nahasapeemapetilon", actor: "Hank Azaria", img: "assets/simpsons.jpg" },
+        { nombre: "Mr. Burns", actor: "Harry Shearer", img: "assets/simpsons/burns.jpg" },
+        { nombre: "Ned Flanders", actor: "Harry Shearer", img: "assets/simpsons/ned.png" },
+        { nombre: "Krusty", actor: "Dan Castellaneta", img: "assets/simpsons/krusti.jpeg" },
+        { nombre: "Milhouse", actor: "Pamela Hayden", img: "assets/simpsons/mil.jpg" },
+        { nombre: "Apu Nahasapeemapetilon", actor: "Hank Azaria", img: "assets/simpsons/apu.jpeg" },
 
         ]
 },
@@ -176,7 +176,7 @@ const DATA = {
             personaje: "Newt",
             epoca: "origen",
             descripcion: "Antes de Harry, el mundo mágico en expansión",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/p1.jpg"
         },
 
         // 🟢 HOGWARTS
@@ -187,7 +187,7 @@ const DATA = {
             personaje: "Harry",
             epoca: "hogwarts",
             descripcion: "Descubrimiento del mundo mágico",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/p2.jpg"
         },
         {
             titulo: "Cámara Secreta",
@@ -196,7 +196,7 @@ const DATA = {
             personaje: "Harry",
             epoca: "hogwarts",
             descripcion: "El heredero de Slytherin",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/p3.jpg"
         },
         {
             titulo: "Prisionero de Azkaban",
@@ -205,7 +205,7 @@ const DATA = {
             personaje: "Harry",
             epoca: "hogwarts",
             descripcion: "Sirius Black y los dementores",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/p4.jpg"
         },
 
         // 🔴 GUERRA
@@ -216,7 +216,7 @@ const DATA = {
             personaje: "Harry",
             epoca: "guerra",
             descripcion: "Regreso de Voldemort",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/p5.jpg"
         },
         {
             titulo: "Orden del Fénix",
@@ -225,7 +225,7 @@ const DATA = {
             personaje: "Harry",
             epoca: "guerra",
             descripcion: "Resistencia contra el Ministerio",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/p6.jpg"
         },
         {
             titulo: "Misterio del Príncipe",
@@ -234,7 +234,7 @@ const DATA = {
             personaje: "Harry",
             epoca: "guerra",
             descripcion: "Secretos de Voldemort",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/p7.jpg"
         },
         {
             titulo: "Reliquias de la Muerte Parte 1",
@@ -243,7 +243,7 @@ const DATA = {
             personaje: "Harry",
             epoca: "guerra",
             descripcion: "Huida y búsqueda de horrocruxes",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/p8.jpg"
         },
         {
             titulo: "Reliquias de la Muerte Parte 2",
@@ -252,7 +252,7 @@ const DATA = {
             personaje: "Harry",
             epoca: "guerra",
             descripcion: "Batalla final",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/p9.png"
         },
 
         // 🟣 LEGADO
@@ -263,35 +263,35 @@ const DATA = {
             personaje: "Harry",
             epoca: "legado",
             descripcion: "Historia tras la saga original",
-            img: "assets/harrypotter.jpg"
+            img: "assets/harry/l1.jpeg"
         },
 
-        { titulo: "Piedra Filosofal (Libro)", año: 1997, tipo: "libro", personaje: "Harry", epoca: "hogwarts", descripcion: "Inicio original de la saga", img: "assets/harrypotter.jpg" },
-        { titulo: "Cámara Secreta (Libro)", año: 1998, tipo: "libro", personaje: "Harry", epoca: "hogwarts", descripcion: "Segundo libro", img: "assets/harrypotter.jpg" },
-        { titulo: "Prisionero de Azkaban (Libro)", año: 1999, tipo: "libro", personaje: "Harry", epoca: "hogwarts", img: "assets/harrypotter.jpg" },
-        { titulo: "Cáliz de Fuego (Libro)", año: 2000, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harrypotter.jpg" },
-        { titulo: "Orden del Fénix (Libro)", año: 2003, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harrypotter.jpg" },
-        { titulo: "Misterio del Príncipe (Libro)", año: 2005, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harrypotter.jpg" },
-        { titulo: "Reliquias de la Muerte (Libro)", año: 2007, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harrypotter.jpg" }
+        { titulo: "Piedra Filosofal (Libro)", año: 1997, tipo: "libro", personaje: "Harry", epoca: "hogwarts", descripcion: "Inicio original de la saga", img: "assets/harry/l2.jpeg" },
+        { titulo: "Cámara Secreta (Libro)", año: 1998, tipo: "libro", personaje: "Harry", epoca: "hogwarts", descripcion: "Segundo libro", img: "assets/harry/l2.jpg" },
+        { titulo: "Prisionero de Azkaban (Libro)", año: 1999, tipo: "libro", personaje: "Harry", epoca: "hogwarts", img: "assets/harry/l3.jpeg" },
+        { titulo: "Cáliz de Fuego (Libro)", año: 2000, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harry/l4.jpg"},
+        { titulo: "Orden del Fénix (Libro)", año: 2003, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harry/l5.jpg" },
+        { titulo: "Misterio del Príncipe (Libro)", año: 2005, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harry/l6.jpg" },
+        { titulo: "Reliquias de la Muerte (Libro)", año: 2007, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harry/l7.jpg" }
           
     ],
 
     personajes: [
 
-        { nombre: "Harry Potter", actor: "Daniel Radcliffe", img: "assets/harrypotter.jpg" },
-        { nombre: "Hermione Granger", actor: "Emma Watson", img: "assets/harrypotter.jpg" },
-        { nombre: "Ron Weasley", actor: "Rupert Grint", img: "assets/harrypotter.jpg" },
+        { nombre: "Harry Potter", actor: "Daniel Radcliffe", img: "assets/harry/harry.jpeg" },
+        { nombre: "Hermione Granger", actor: "Emma Watson", img: "assets/harry/pe2.jpg" },
+        { nombre: "Ron Weasley", actor: "Rupert Grint", img: "assets/harry/pe3.jpg" },
 
-        { nombre: "Albus Dumbledore", actor: "Michael Gambon", img: "assets/harrypotter.jpg" },
-        { nombre: "Severus Snape", actor: "Alan Rickman", img: "assets/harrypotter.jpg" },
+        { nombre: "Albus Dumbledore", actor: "Michael Gambon", img: "assets/harry/pe4.jpeg" },
+        { nombre: "Severus Snape", actor: "Alan Rickman", img: "assets/harry/pee.jpeg" },
 
-        { nombre: "Lord Voldemort", actor: "Ralph Fiennes", img: "assets/harrypotter.jpg" },
-        { nombre: "Draco Malfoy", actor: "Tom Felton", img: "assets/harrypotter.jpg" },
+        { nombre: "Lord Voldemort", actor: "Ralph Fiennes", img: "assets/harry/pe5.jpg" },
+        { nombre: "Draco Malfoy", actor: "Tom Felton", img: "assets/harry/draco.jpg" },
 
-        { nombre: "Sirius Black", actor: "Gary Oldman", img: "assets/harrypotter.jpg" },
-        { nombre: "Hagrid", actor: "Robbie Coltrane", img: "assets/harrypotter.jpg" },
+        { nombre: "Sirius Black", actor: "Gary Oldman", img: "assets/harry/pe6.jpg" },
+        { nombre: "Hagrid", actor: "Robbie Coltrane", img: "assets/harry/hagrid.jpeg" },
 
-        { nombre: "Newt Scamander", actor: "Eddie Redmayne", img: "assets/harrypotter.jpg" }  ]
+        { nombre: "Newt Scamander", actor: "Eddie Redmayne", img: "assets/harry/newt.jpeg" }  ]
 },
 
     // ========================
