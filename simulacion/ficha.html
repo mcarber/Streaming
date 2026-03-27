@@ -6,26 +6,49 @@
 <link rel="stylesheet" href="css/sim.css">
 </head>
 
-<body>
+<body class="ficha-body">
 
 <canvas id="space-canvas"></canvas>
 
-<div class="ficha-container">
+<div class="ficha-netflix">
 
-    <img id="ficha-img" src="">
+    <div class="ficha-overlay"></div>
 
-    <div class="ficha-info">
-        <h1 id="ficha-titulo"></h1>
+    <div class="ficha-content">
 
-        <p>
-        Explora este contenido dentro del universo. Aquí iría una descripción real.
-        </p>
+        <img id="ficha-img" class="poster">
 
-        <button class="play-btn">▶ Reproducir</button>
+        <div class="info">
+            <h1 id="ficha-titulo"></h1>
+
+            <div class="meta">
+                <span class="badge" id="ficha-tipo"></span>
+                <span id="ficha-año"></span>
+            </div>
+
+            <p id="ficha-desc"></p>
+
+            <p class="prota"><strong>Protagonista:</strong> <span id="ficha-prota"></span></p>
+
+            <button class="btn play">
+                ▶ Reproducir
+            </button>
+
+            <button class="btn info">
+                ℹ Más info
+            </button>
+
+            <button class="btn fav" onclick="toggleFav()">
+                ❤️ Mi lista
+            </button>
+
+</div>
+        </div>
+
     </div>
 
 </div>
-
+<button class="back-btn" onclick="window.close()">← Volver</button>
 <script src="js/sim.js"></script>
 </body>
 </html>

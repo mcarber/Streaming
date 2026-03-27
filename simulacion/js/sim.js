@@ -8,137 +8,133 @@ const DATA = {
     // ⭐ STAR WARS
     // ========================
 
-    starwars: {
-        nombre: "Star Wars",
-        descripcion: "Explora la galaxia muy, muy lejana",
-        hero: "assets/starwars.jpg",
+   starwars: {
+    nombre: "Star Wars",
+    descripcion: "Explora la galaxia muy, muy lejana",
+    hero: "assets/starwars/ep4.jpg",
 
-        contenido: [
+    contenido: [
 
-            // PRECUELA
-            { titulo: "Episodio I", año: 1999, tipo: "pelicula", personaje: "Anakin", epoca: "precuela", descripcion: "Descubrimiento de Anakin", img: "assets/starwars.jpg" },
-            { titulo: "Episodio II", año: 2002, tipo: "pelicula", personaje: "Anakin", epoca: "precuela", descripcion: "Inicio del conflicto", img: "assets/starwars.jpg" },
-            { titulo: "The Clone Wars", año: 2008, tipo: "serie", personaje: "Anakin", epoca: "precuela", descripcion: "Guerra clon", img: "assets/starwars.jpg" },
-            { titulo: "Episodio III", año: 2005, tipo: "pelicula", personaje: "Anakin", epoca: "precuela", descripcion: "Nacimiento de Vader", img: "assets/starwars.jpg" },
+        // PRECUELA
+        { titulo: "Episodio I", año: 1999, tipo: "pelicula", personaje: "Anakin", epoca: "precuela", descripcion: "Un joven esclavo con un poder extraordinario es descubierto por los Jedi, iniciando el destino de Anakin Skywalker.", img: "assets/starwars/ep1.jpg" },
+        { titulo: "Episodio II", año: 2002, tipo: "pelicula", personaje: "Anakin", epoca: "precuela", descripcion: "La galaxia se acerca a la guerra mientras Anakin lucha con sus emociones y su destino.", img: "assets/starwars/ep2.jpg" },
+        { titulo: "The Clone Wars", año: 2008, tipo: "serie", personaje: "Anakin", epoca: "precuela", descripcion: "La guerra entre la República y los separatistas se intensifica mientras los Jedi lideran ejércitos clon.", img: "assets/starwars/clonewars.jpg" },
+        { titulo: "Episodio III", año: 2005, tipo: "pelicula", personaje: "Anakin", epoca: "precuela", descripcion: "Anakin cae al lado oscuro y nace Darth Vader en el ocaso de la República.", img: "assets/starwars/ep3.jpg" },
 
-            // IMPERIO
-            { titulo: "The Bad Batch", año: 2021, tipo: "serie", personaje: "Clones", epoca: "imperio", descripcion: "Clones tras la caída", img: "assets/starwars.jpg" },
-            { titulo: "Jedi Fallen Order", año: 2019, tipo: "juego", personaje: "Cal", epoca: "imperio", descripcion: "Jedi superviviente", img: "assets/starwars.jpg" },
-            { titulo: "Obi-Wan Kenobi", año: 2022, tipo: "serie", personaje: "Obi-Wan", epoca: "imperio", descripcion: "Exilio Jedi", img: "assets/starwars.jpg" },
-            { titulo: "Andor", año: 2022, tipo: "serie", personaje: "Cassian", epoca: "imperio", descripcion: "Origen rebelión", img: "assets/starwars.jpg" },
-            { titulo: "Rogue One", año: 2016, tipo: "pelicula", personaje: "Jyn", epoca: "imperio", descripcion: "Robo planos", img: "assets/starwars.jpg" },
+        // IMPERIO
+        { titulo: "The Bad Batch", año: 2021, tipo: "serie", personaje: "Clones", epoca: "imperio", descripcion: "Un grupo de clones defectuosos busca su lugar en una galaxia dominada por el Imperio.", img: "assets/starwars/badbatch.jpg" },
+        { titulo: "Jedi Fallen Order", año: 2019, tipo: "juego", personaje: "Cal", epoca: "imperio", descripcion: "Un joven Jedi superviviente huye del Imperio mientras redescubre la Fuerza.", img: "assets/starwars/fallenorder.jpg" },
+        { titulo: "Obi-Wan Kenobi", año: 2022, tipo: "serie", personaje: "Obi-Wan", epoca: "imperio", descripcion: "El maestro Jedi vive oculto mientras vigila a Luke y enfrenta su pasado.", img: "assets/starwars/obiwan.jpg" },
+        { titulo: "Andor", año: 2022, tipo: "serie", personaje: "Cassian", epoca: "imperio", descripcion: "La historia del espía rebelde Cassian Andor y el nacimiento de la Rebelión.", img: "assets/starwars/andor.jpg" },
+        { titulo: "Rogue One", año: 2016, tipo: "pelicula", personaje: "Jyn", epoca: "imperio", descripcion: "Un grupo de rebeldes se sacrifica para robar los planos de la Estrella de la Muerte.", img: "assets/starwars/rogueone.jpg" },
 
-            // CLÁSICO
-            { titulo: "Episodio IV", año: 1977, tipo: "pelicula", personaje: "Luke", epoca: "clasico", descripcion: "Nueva esperanza", img: "assets/starwars.jpg" },
-            { titulo: "Episodio V", año: 1980, tipo: "pelicula", personaje: "Luke", epoca: "clasico", descripcion: "Imperio contraataca", img: "assets/starwars.jpg" },
-            { titulo: "Episodio VI", año: 1983, tipo: "pelicula", personaje: "Luke", epoca: "clasico", descripcion: "Fin del imperio", img: "assets/starwars.jpg" },
+        // CLÁSICO
+        { titulo: "Episodio IV", año: 1977, tipo: "pelicula", personaje: "Luke", epoca: "clasico", descripcion: "Luke Skywalker inicia su viaje para convertirse en Jedi y luchar contra el Imperio.", img: "assets/starwars/ep4.jpg" },
+        { titulo: "Episodio V", año: 1980, tipo: "pelicula", personaje: "Luke", epoca: "clasico", descripcion: "El Imperio contraataca y Luke enfrenta una verdad que cambiará su destino.", img: "assets/starwars/ep5.jpg" },
+        { titulo: "Episodio VI", año: 1983, tipo: "pelicula", personaje: "Luke", epoca: "clasico", descripcion: "La Rebelión intenta destruir el Imperio mientras Luke busca redimir a su padre.", img: "assets/starwars/ep6.jpg" },
 
-            // REPÚBLICA
-            { titulo: "The Mandalorian", año: 2019, tipo: "serie", personaje: "Mando", epoca: "republica", descripcion: "Cazarrecompensas", img: "assets/starwars.jpg" },
-            { titulo: "Ahsoka", año: 2023, tipo: "serie", personaje: "Ahsoka", epoca: "republica", descripcion: "Búsqueda Thrawn", img: "assets/starwars.jpg" },
+        // REPÚBLICA
+        { titulo: "The Mandalorian", año: 2019, tipo: "serie", personaje: "Mando", epoca: "republica", descripcion: "Un cazarrecompensas solitario protege a un misterioso niño sensible a la Fuerza.", img: "assets/starwars/mandalorian.jpg" },
+        { titulo: "Ahsoka", año: 2023, tipo: "serie", personaje: "Ahsoka", epoca: "republica", descripcion: "Ahsoka Tano investiga una nueva amenaza que podría cambiar el equilibrio galáctico.", img: "assets/starwars/ahsoka.jpg" },
 
-            // SECUELA
-            { titulo: "Episodio VII", año: 2015, tipo: "pelicula", personaje: "Rey", epoca: "secuela", descripcion: "Nueva generación", img: "assets/starwars.jpg" },
-            { titulo: "Episodio VIII", año: 2017, tipo: "pelicula", personaje: "Rey", epoca: "secuela", descripcion: "Equilibrio", img: "assets/starwars.jpg" },
-            { titulo: "Episodio IX", año: 2019, tipo: "pelicula", personaje: "Rey", epoca: "secuela", descripcion: "Final saga", img: "assets/starwars.jpg" },
-        
-            { titulo: "Darth Plagueis", año: 2012, tipo: "libro", personaje: "Plagueis", epoca: "precuela", descripcion: "Orígenes del lado oscuro", img: "assets/starwars.jpg" },
-            { titulo: "Thrawn", año: 2017, tipo: "libro", personaje: "Thrawn", epoca: "imperio", descripcion: "Ascenso del Gran Almirante", img: "assets/starwars.jpg" },
-            { titulo: "Aftermath", año: 2015, tipo: "libro", personaje: "Rebelión", epoca: "republica", descripcion: "Tras la caída del Imperio", img: "assets/starwars.jpg" }
-        ],
+        // SECUELA
+        { titulo: "Episodio VII", año: 2015, tipo: "pelicula", personaje: "Rey", epoca: "secuela", descripcion: "Una nueva generación enfrenta el resurgimiento del lado oscuro.", img: "assets/starwars/ep7.jpg" },
+        { titulo: "Episodio VIII", año: 2017, tipo: "pelicula", personaje: "Rey", epoca: "secuela", descripcion: "La Resistencia lucha por sobrevivir mientras Rey busca su lugar en la Fuerza.", img: "assets/starwars/ep8.jpg" },
+        { titulo: "Episodio IX", año: 2019, tipo: "pelicula", personaje: "Rey", epoca: "secuela", descripcion: "El conflicto final entre Jedi y Sith decide el destino de la galaxia.", img: "assets/starwars/ep9.jpg" },
 
-        personajes: [
-            { nombre: "Anakin Skywalker", actor: "Hayden Christensen", img: "assets/starwars.jpg" },
-            { nombre: "Darth Vader", actor: "James Earl Jones", img: "assets/starwars.jpg" },
-            { nombre: "Luke Skywalker", actor: "Mark Hamill", img: "assets/starwars.jpg" },
-            { nombre: "Leia Organa", actor: "Carrie Fisher", img: "assets/starwars.jpg" },
-            { nombre: "Han Solo", actor: "Harrison Ford", img: "assets/starwars.jpg" },
-            { nombre: "Obi-Wan Kenobi", actor: "Ewan McGregor", img: "assets/starwars.jpg" },
-            { nombre: "Rey", actor: "Daisy Ridley", img: "assets/starwars.jpg" }
-        ]
-    },
+        // LIBROS
+        { titulo: "Darth Plagueis", año: 2012, tipo: "libro", personaje: "Plagueis", epoca: "precuela", descripcion: "La historia del maestro Sith que dominó los secretos de la vida y la muerte.", img: "assets/starwars/plagueis.jpg" },
+        { titulo: "Thrawn", año: 2017, tipo: "libro", personaje: "Thrawn", epoca: "imperio", descripcion: "El ascenso de un estratega brillante dentro del Imperio Galáctico.", img: "assets/starwars/thrawn.jpg" },
+        { titulo: "Aftermath", año: 2015, tipo: "libro", personaje: "Rebelión", epoca: "republica", descripcion: "La galaxia intenta reconstruirse tras la caída del Imperio.", img: "assets/starwars/aftermath.jpg" }
+    ],
+
+    personajes: [
+        { nombre: "Anakin Skywalker", actor: "Hayden Christensen", img: "assets/starwars/anakin.jpg" },
+        { nombre: "Darth Vader", actor: "James Earl Jones", img: "assets/starwars/vader.jpg" },
+        { nombre: "Luke Skywalker", actor: "Mark Hamill", img: "assets/starwars/luke.jpg" },
+        { nombre: "Leia Organa", actor: "Carrie Fisher", img: "assets/starwars/leia.jpg" },
+        { nombre: "Han Solo", actor: "Harrison Ford", img: "assets/starwars/han.jpg" },
+        { nombre: "Obi-Wan Kenobi", actor: "Ewan McGregor", img: "assets/starwars/obiwan_char.jpg" },
+        { nombre: "Rey", actor: "Daisy Ridley", img: "assets/starwars/rey.jpg" }
+    ]
+},
 
     // ========================
     // 🍩 SIMPSONS
     // ========================
 
     simpsons: {
-    nombre: "Los Simpson",
-    descripcion: "Springfield y sus historias a lo largo de décadas",
-    hero: "assets/simpsons.jpg",
+        nombre: "Los Simpson",
+        descripcion: "Springfield y sus historias a lo largo de décadas",
+        hero: "assets/simpsons.jpg",
 
-    contenido: [
+        contenido: [
 
-        // 🟡 INICIO
         {
-            titulo: "Temporadas 1-3",
-            año: 1989,
-            tipo: "serie",
-            personaje: "Homer",
-            epoca: "inicio",
-            descripcion: "Primeros años y evolución de personajes",
-            img: "assets/simpsons/temp1-3.jpg"
+        titulo: "Temporadas 1-3",
+        año: 1989,
+        tipo: "serie",
+        personaje: "Homer",
+        epoca: "inicio",
+        descripcion: "Los inicios de la familia Simpson mientras Springfield toma forma como icono cultural.",
+        img: "assets/simpsons/temp1-3.jpg"
+        },
+        {
+        titulo: "Temporadas 4-9",
+        año: 1993,
+        tipo: "serie",
+        personaje: "Homer",
+        epoca: "dorado",
+        descripcion: "La edad dorada con los episodios más recordados y el humor más afilado.",
+        img: "assets/simpsons/temp4-9.jpg"
         },
 
-        // 🟢 EDAD DORADA
-        {
-            titulo: "Temporadas 4-9",
-            año: 1993,
-            tipo: "serie",
-            personaje: "Homer",
-            epoca: "dorado",
-            descripcion: "Etapa más icónica y mejores episodios",
-            img: "assets/simpsons/temp4-9.jpg"
-        },
-
-        // 🔵 EXPANSIÓN
-        {
-            titulo: "Temporadas 10-15",
-            año: 1999,
-            tipo: "serie",
-            personaje: "Homer",
-            epoca: "expansion",
-            descripcion: "Popularidad global y cambios de estilo",
-            img: "assets/simpsons/temp10-15.jpeg"
-        },
-
-        // 🟣 MODERNO
-        {
-            titulo: "Temporadas 16-25",
-            año: 2005,
-            tipo: "serie",
-            personaje: "Homer",
-            epoca: "moderno",
-            descripcion: "Adaptación a nuevas audiencias",
-            img: "assets/simpsons/temp-16-25.jpg"
-        },
-
-        // 🔴 ACTUAL
-        {
-            titulo: "Temporadas 26-Actualidad",
-            año: 2014,
-            tipo: "serie",
-            personaje: "Homer",
-            epoca: "actual",
-            descripcion: "Era contemporánea y streaming",
-            img: "assets/simpsons/actual.jpeg"
-        },
-
-        // 🎬 PELÍCULA
-        {
-            titulo: "Los Simpson: La Película",
-            año: 2007,
-            tipo: "pelicula",
-            personaje: "Homer",
-            epoca: "dorado",
-            descripcion: "Evento cinematográfico de la serie",
-            img: "assets/simpsons/movie.png"
-        },
-
-        { titulo: "Simpsons Comics", año: 1993, tipo: "libro", personaje: "Bart", epoca: "clasico", descripcion: "Historias en cómic", img: "assets/simpsons/comic.jpg" },
-        { titulo: "Bart Simpson Comics", año: 2000, tipo: "libro", personaje: "Bart", epoca: "clasico", descripcion: "Aventuras de Bart", img: "assets/simpsons/bart_comic.jpeg" }
     
-    ],
+        {
+        titulo: "Temporadas 10-15",
+        año: 1999,
+        tipo: "serie",
+        personaje: "Homer",
+        epoca: "expansion",
+        descripcion: "La serie evoluciona y se adapta a una audiencia global.",
+        img: "assets/simpsons/temp10-15.jpeg"
+        },
+
+        {
+        titulo: "Temporadas 16-25",
+        año: 2005,
+        tipo: "serie",
+        personaje: "Homer",
+        epoca: "moderno",
+        descripcion: "Nuevas historias y estilos en una etapa de transición.",
+        img: "assets/simpsons/temp-16-25.jpg"
+        },
+
+        {
+        titulo: "Temporadas 26-Actualidad",
+        año: 2014,
+        tipo: "serie",
+        personaje: "Homer",
+        epoca: "actual",
+        descripcion: "La serie continúa reinventándose en la era moderna.",
+        img: "assets/simpsons/actual.jpeg"
+        },
+
+        {
+        titulo: "Los Simpson: La Película",
+        año: 2007,
+        tipo: "pelicula",
+        personaje: "Homer",
+        epoca: "dorado",
+        descripcion: "Homer provoca un desastre que pone en peligro a toda Springfield.",
+        img: "assets/simpsons/movie.png"
+        },
+
+        { titulo: "Simpsons Comics", año: 1993, tipo: "libro", personaje: "Bart", epoca: "clasico", descripcion: "Historias alternativas y aventuras de los personajes en formato cómic.", img: "assets/simpsons/comic.jpg" },
+
+        { titulo: "Bart Simpson Comics", año: 2000, tipo: "libro", personaje: "Bart", epoca: "clasico", descripcion: "Bart protagoniza travesuras y aventuras en sus propias historias.", img: "assets/simpsons/bart_comic.jpeg" }
+
+        ],
 
     personajes: [
 
@@ -162,119 +158,120 @@ const DATA = {
     // ========================
 
     harrypotter: {
-    nombre: "Harry Potter",
-    descripcion: "El mundo mágico y la lucha contra Voldemort",
-    hero: "assets/harrypotter.jpg",
+        nombre: "Harry Potter",
+        descripcion: "El mundo mágico y la lucha contra Voldemort",
+        hero: "assets/harrypotter.jpg",
 
-    contenido: [
-
-        // 🟡 ORÍGENES
+        contenido: [
         {
-            titulo: "Animales Fantásticos",
-            año: 2016,
-            tipo: "pelicula",
-            personaje: "Newt",
-            epoca: "origen",
-            descripcion: "Antes de Harry, el mundo mágico en expansión",
-            img: "assets/harry/p1.jpg"
+        titulo: "Animales Fantásticos",
+        año: 2016,
+        tipo: "pelicula",
+        personaje: "Newt",
+        epoca: "origen",
+        descripcion: "Newt Scamander explora criaturas mágicas en una época anterior a Harry Potter.",
+        img: "assets/harry/p1.jpg"
         },
 
-        // 🟢 HOGWARTS
         {
-            titulo: "Piedra Filosofal",
-            año: 2001,
-            tipo: "pelicula",
-            personaje: "Harry",
-            epoca: "hogwarts",
-            descripcion: "Descubrimiento del mundo mágico",
-            img: "assets/harry/p2.jpg"
+        titulo: "Piedra Filosofal",
+        año: 2001,
+        tipo: "pelicula",
+        personaje: "Harry",
+        epoca: "hogwarts",
+        descripcion: "Harry descubre que es mago y entra en el mundo de Hogwarts.",
+        img: "assets/harry/p2.jpg"
         },
         {
-            titulo: "Cámara Secreta",
-            año: 2002,
-            tipo: "pelicula",
-            personaje: "Harry",
-            epoca: "hogwarts",
-            descripcion: "El heredero de Slytherin",
-            img: "assets/harry/p3.jpg"
+        titulo: "Cámara Secreta",
+        año: 2002,
+        tipo: "pelicula",
+        personaje: "Harry",
+        epoca: "hogwarts",
+        descripcion: "Una amenaza oculta pone en peligro a los estudiantes de Hogwarts.",
+        img: "assets/harry/p3.jpg"
         },
         {
-            titulo: "Prisionero de Azkaban",
-            año: 2004,
-            tipo: "pelicula",
-            personaje: "Harry",
-            epoca: "hogwarts",
-            descripcion: "Sirius Black y los dementores",
-            img: "assets/harry/p4.jpg"
-        },
-
-        // 🔴 GUERRA
-        {
-            titulo: "Cáliz de Fuego",
-            año: 2005,
-            tipo: "pelicula",
-            personaje: "Harry",
-            epoca: "guerra",
-            descripcion: "Regreso de Voldemort",
-            img: "assets/harry/p5.jpg"
-        },
-        {
-            titulo: "Orden del Fénix",
-            año: 2007,
-            tipo: "pelicula",
-            personaje: "Harry",
-            epoca: "guerra",
-            descripcion: "Resistencia contra el Ministerio",
-            img: "assets/harry/p6.jpg"
-        },
-        {
-            titulo: "Misterio del Príncipe",
-            año: 2009,
-            tipo: "pelicula",
-            personaje: "Harry",
-            epoca: "guerra",
-            descripcion: "Secretos de Voldemort",
-            img: "assets/harry/p7.jpg"
-        },
-        {
-            titulo: "Reliquias de la Muerte Parte 1",
-            año: 2010,
-            tipo: "pelicula",
-            personaje: "Harry",
-            epoca: "guerra",
-            descripcion: "Huida y búsqueda de horrocruxes",
-            img: "assets/harry/p8.jpg"
-        },
-        {
-            titulo: "Reliquias de la Muerte Parte 2",
-            año: 2011,
-            tipo: "pelicula",
-            personaje: "Harry",
-            epoca: "guerra",
-            descripcion: "Batalla final",
-            img: "assets/harry/p9.png"
+        titulo: "Prisionero de Azkaban",
+        año: 2004,
+        tipo: "pelicula",
+        personaje: "Harry",
+        epoca: "hogwarts",
+        descripcion: "Harry descubre la verdad sobre su pasado y Sirius Black.",
+        img: "assets/harry/p4.jpg"
         },
 
-        // 🟣 LEGADO
         {
-            titulo: "El legado maldito",
-            año: 2016,
-            tipo: "libro",
-            personaje: "Harry",
-            epoca: "legado",
-            descripcion: "Historia tras la saga original",
-            img: "assets/harry/l1.jpeg"
+        titulo: "Cáliz de Fuego",
+        año: 2005,
+        tipo: "pelicula",
+        personaje: "Harry",
+        epoca: "guerra",
+        descripcion: "El Torneo de los Tres Magos marca el regreso de Voldemort.",
+        img: "assets/harry/p5.jpg"
+        },
+        {
+        titulo: "Orden del Fénix",
+        año: 2007,
+        tipo: "pelicula",
+        personaje: "Harry",
+        epoca: "guerra",
+        descripcion: "Harry lidera la resistencia contra el Ministerio y Voldemort.",
+        img: "assets/harry/p6.jpg"
+        },
+        {
+        titulo: "Misterio del Príncipe",
+        año: 2009,
+        tipo: "pelicula",
+        personaje: "Harry",
+        epoca: "guerra",
+        descripcion: "Se revelan secretos clave sobre Voldemort y su pasado.",
+        img: "assets/harry/p7.jpg"
+        },
+        {
+        titulo: "Reliquias de la Muerte Parte 1",
+        año: 2010,
+        tipo: "pelicula",
+        personaje: "Harry",
+        epoca: "guerra",
+        descripcion: "Harry huye mientras busca destruir los horrocruxes.",
+        img: "assets/harry/p8.jpg"
+        },
+        {
+        titulo: "Reliquias de la Muerte Parte 2",
+        año: 2011,
+        tipo: "pelicula",
+        personaje: "Harry",
+        epoca: "guerra",
+        descripcion: "La batalla final decide el destino del mundo mágico.",
+        img: "assets/harry/p9.png"
         },
 
-        { titulo: "Piedra Filosofal (Libro)", año: 1997, tipo: "libro", personaje: "Harry", epoca: "hogwarts", descripcion: "Inicio original de la saga", img: "assets/harry/l2.jpeg" },
-        { titulo: "Cámara Secreta (Libro)", año: 1998, tipo: "libro", personaje: "Harry", epoca: "hogwarts", descripcion: "Segundo libro", img: "assets/harry/l2.jpg" },
-        { titulo: "Prisionero de Azkaban (Libro)", año: 1999, tipo: "libro", personaje: "Harry", epoca: "hogwarts", img: "assets/harry/l3.jpeg" },
-        { titulo: "Cáliz de Fuego (Libro)", año: 2000, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harry/l4.jpg"},
-        { titulo: "Orden del Fénix (Libro)", año: 2003, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harry/l5.jpg" },
-        { titulo: "Misterio del Príncipe (Libro)", año: 2005, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harry/l6.jpg" },
-        { titulo: "Reliquias de la Muerte (Libro)", año: 2007, tipo: "libro", personaje: "Harry", epoca: "guerra", img: "assets/harry/l7.jpg" }
-          
-    ],
+        {
+        titulo: "El legado maldito",
+        año: 2016,
+        tipo: "libro",
+        personaje: "Harry",
+        epoca: "legado",
+        descripcion: "La historia continúa con la nueva generación de magos.",
+        img: "assets/harry/l1.jpeg"
+        },
+
+        { titulo: "Piedra Filosofal (Libro)", año: 1997, tipo: "libro", personaje: "Harry", epoca: "hogwarts", descripcion: "El inicio literario de la historia original de Harry Potter.", img: "assets/harry/l2.jpeg" },
+
+        { titulo: "Cámara Secreta (Libro)", año: 1998, tipo: "libro", personaje: "Harry", epoca: "hogwarts", descripcion: "Harry regresa a Hogwarts en su segundo año enfrentando nuevos peligros.", img: "assets/harry/l2.jpg" },
+
+        { titulo: "Prisionero de Azkaban (Libro)", año: 1999, tipo: "libro", personaje: "Harry", epoca: "hogwarts", descripcion: "El misterio de Sirius Black cambia la vida de Harry para siempre.", img: "assets/harry/l3.jpeg" },
+
+        { titulo: "Cáliz de Fuego (Libro)", año: 2000, tipo: "libro", personaje: "Harry", epoca: "guerra", descripcion: "El torneo mágico se convierte en una trampa mortal.", img: "assets/harry/l4.jpg" },
+
+        { titulo: "Orden del Fénix (Libro)", año: 2003, tipo: "libro", personaje: "Harry", epoca: "guerra", descripcion: "La resistencia contra Voldemort comienza a tomar forma.", img: "assets/harry/l5.jpg" },
+
+        { titulo: "Misterio del Príncipe (Libro)", año: 2005, tipo: "libro", personaje: "Harry", epoca: "guerra", descripcion: "Se descubren los secretos más oscuros de Voldemort.", img: "assets/harry/l6.jpg" },
+
+        { titulo: "Reliquias de la Muerte (Libro)", año: 2007, tipo: "libro", personaje: "Harry", epoca: "guerra", descripcion: "El enfrentamiento final pone fin a la historia original.", img: "assets/harry/l7.jpg" }
+
+        ],
 
     personajes: [
 
@@ -299,135 +296,128 @@ const DATA = {
     // ========================
 
     pokemon: {
-    nombre: "Pokémon",
-    descripcion: "Atrápalos todos a través de generaciones",
-    hero: "assets/pokemon.jpg",
+        nombre: "Pokémon",
+        descripcion: "Atrápalos todos a través de generaciones",
+        hero: "assets/pokemon.jpg",
 
-    contenido: [
+        contenido: [
 
-        // 🔴 GEN 1 - KANTO
         {
-            titulo: "Pokémon Rojo/Azul",
-            año: 1996,
-            tipo: "juego",
-            personaje: "Red",
-            epoca: "kanto",
-            descripcion: "Inicio de la saga Pokémon",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon Rojo/Azul",
+        año: 1996,
+        tipo: "juego",
+        personaje: "Red",
+        epoca: "kanto",
+        descripcion: "El inicio de la aventura Pokémon en la región de Kanto.",
+        img: "assets/pokemon.jpg"
         },
         {
-            titulo: "Pokémon Amarillo",
-            año: 1998,
-            tipo: "juego",
-            personaje: "Ash",
-            epoca: "kanto",
-            descripcion: "Versión basada en el anime",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon Amarillo",
+        año: 1998,
+        tipo: "juego",
+        personaje: "Ash",
+        epoca: "kanto",
+        descripcion: "Una versión inspirada en el anime con Pikachu como compañero.",
+        img: "assets/pokemon.jpg"
         },
 
-        // 🟡 GEN 2 - JOHTO
         {
-            titulo: "Pokémon Oro/Plata",
-            año: 1999,
-            tipo: "juego",
-            personaje: "Gold",
-            epoca: "johto",
-            descripcion: "Nuevos Pokémon y ciclo día/noche",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon Oro/Plata",
+        año: 1999,
+        tipo: "juego",
+        personaje: "Gold",
+        epoca: "johto",
+        descripcion: "Nuevos Pokémon y mecánicas en la región de Johto.",
+        img: "assets/pokemon.jpg"
         },
 
-        // 🟢 GEN 3 - HOENN
         {
-            titulo: "Pokémon Rubí/Zafiro",
-            año: 2002,
-            tipo: "juego",
-            personaje: "Brendan",
-            epoca: "hoenn",
-            descripcion: "Introducción de habilidades",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon Rubí/Zafiro",
+        año: 2002,
+        tipo: "juego",
+        personaje: "Brendan",
+        epoca: "hoenn",
+        descripcion: "Aventuras en Hoenn con nuevas habilidades y estrategias.",
+        img: "assets/pokemon.jpg"
         },
 
-        // 🔵 GEN 4 - SINNOH
         {
-            titulo: "Pokémon Diamante/Perla",
-            año: 2006,
-            tipo: "juego",
-            personaje: "Lucas",
-            epoca: "sinnoh",
-            descripcion: "Mitología Pokémon",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon Diamante/Perla",
+        año: 2006,
+        tipo: "juego",
+        personaje: "Lucas",
+        epoca: "sinnoh",
+        descripcion: "Exploración de mitos y leyendas en la región de Sinnoh.",
+        img: "assets/pokemon.jpg"
         },
 
-        // 🟣 GEN 5 - UNOVA
         {
-            titulo: "Pokémon Negro/Blanco",
-            año: 2010,
-            tipo: "juego",
-            personaje: "Hilbert",
-            epoca: "unova",
-            descripcion: "Historia más profunda",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon Negro/Blanco",
+        año: 2010,
+        tipo: "juego",
+        personaje: "Hilbert",
+        epoca: "unova",
+        descripcion: "Una historia más profunda sobre ideales y verdad.",
+        img: "assets/pokemon.jpg"
         },
 
-        // 🟠 GEN 6 - KALOS
         {
-            titulo: "Pokémon X/Y",
-            año: 2013,
-            tipo: "juego",
-            personaje: "Calem",
-            epoca: "kalos",
-            descripcion: "Gráficos en 3D y megaevolución",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon X/Y",
+        año: 2013,
+        tipo: "juego",
+        personaje: "Calem",
+        epoca: "kalos",
+        descripcion: "La saga da el salto al 3D con nuevas mecánicas y megaevolución.",
+        img: "assets/pokemon.jpg"
         },
 
-        // ⚫ GEN 7 - ALOLA
         {
-            titulo: "Pokémon Sol/Luna",
-            año: 2016,
-            tipo: "juego",
-            personaje: "Elio",
-            epoca: "alola",
-            descripcion: "Sistema de islas",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon Sol/Luna",
+        año: 2016,
+        tipo: "juego",
+        personaje: "Elio",
+        epoca: "alola",
+        descripcion: "Una aventura basada en islas con un enfoque diferente.",
+        img: "assets/pokemon.jpg"
         },
 
-        // 🔶 GEN 8 - GALAR
         {
-            titulo: "Pokémon Espada/Escudo",
-            año: 2019,
-            tipo: "juego",
-            personaje: "Victor",
-            epoca: "galar",
-            descripcion: "Dinamax",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon Espada/Escudo",
+        año: 2019,
+        tipo: "juego",
+        personaje: "Victor",
+        epoca: "galar",
+        descripcion: "Combates gigantes con la mecánica Dynamax.",
+        img: "assets/pokemon.jpg"
         },
 
-        // 🟪 GEN 9 - PALDEA
         {
-            titulo: "Pokémon Escarlata/Violeta",
-            año: 2022,
-            tipo: "juego",
-            personaje: "Entrenador",
-            epoca: "paldea",
-            descripcion: "Mundo abierto",
-            img: "assets/pokemon.jpg"
+        titulo: "Pokémon Escarlata/Violeta",
+        año: 2022,
+        tipo: "juego",
+        personaje: "Entrenador",
+        epoca: "paldea",
+        descripcion: "Un mundo abierto que redefine la saga Pokémon.",
+        img: "assets/pokemon.jpg"
         },
 
-        // 🎬 ANIME
         {
-            titulo: "Serie Pokémon",
-            año: 1997,
-            tipo: "serie",
-            personaje: "Ash",
-            epoca: "anime",
-            descripcion: "Viaje de Ash Ketchum",
-            img: "assets/pokemon.jpg"
+        titulo: "Serie Pokémon",
+        año: 1997,
+        tipo: "serie",
+        personaje: "Ash",
+        epoca: "anime",
+        descripcion: "El viaje de Ash para convertirse en Maestro Pokémon.",
+        img: "assets/pokemon.jpg"
         },
 
-        { titulo: "Pokémon Adventures", año: 1997, tipo: "libro", personaje: "Red", epoca: "kanto", descripcion: "Manga oficial", img: "assets/pokemon.jpg" },
-        { titulo: "Pokémon Manga Gold & Silver", año: 1999, tipo: "libro", personaje: "Gold", epoca: "johto", img: "assets/pokemon.jpg" },
-        { titulo: "Pokémon Journeys Manga", año: 2020, tipo: "libro", personaje: "Ash", epoca: "anime", img: "assets/pokemon.jpg" }
-            ],
+        { titulo: "Pokémon Adventures", año: 1997, tipo: "libro", personaje: "Red", epoca: "kanto", descripcion: "Historia más madura del mundo Pokémon en formato manga.", img: "assets/pokemon.jpg" },
+
+        { titulo: "Pokémon Manga Gold & Silver", año: 1999, tipo: "libro", personaje: "Gold", epoca: "johto", descripcion: "Continuación del manga con nuevos protagonistas.", img: "assets/pokemon.jpg" },
+
+        { titulo: "Pokémon Journeys Manga", año: 2020, tipo: "libro", personaje: "Ash", epoca: "anime", descripcion: "Nuevas aventuras inspiradas en el anime moderno.", img: "assets/pokemon.jpg" }
+
+        ],
 
     personajes: [
 
@@ -458,9 +448,9 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "universo.html";
     }
 
-    window.openFicha = function (name) {
-    localStorage.setItem("ficha", name);
-    window.open("ficha.html", "_blank"); // 🔥 nueva pestaña
+    window.openFicha = function (item) {
+    localStorage.setItem("ficha", JSON.stringify(item));
+    window.open("ficha.html", "_blank");
 }
 
     // ========================
@@ -527,7 +517,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-        card.onclick = () => openFicha(item.titulo);
+        card.onclick = () => openFicha(item);
 
         cont.appendChild(card);
     });
@@ -560,7 +550,7 @@ function renderTimeline(lista) {
                 <span>${item.año}</span>
             </div>
 
-            <div class="timeline-card" onclick="openFicha('${item.titulo}')">
+            <div class="timeline-card" onclick='openFicha(${JSON.stringify(item)})'>
                 <img src="${item.img}">
                 
                 <div class="card-info">
@@ -782,3 +772,41 @@ if (searchInput && resultsBox) {
     animate();
 
 });
+
+// ========================
+// CARGAR FICHA PRO
+// ========================
+
+const fichaData = localStorage.getItem("ficha");
+
+if (fichaData) {
+
+    const item = JSON.parse(fichaData);
+
+    // 🔥 fondo estilo Netflix
+    document.querySelector(".ficha-netflix").style.backgroundImage = `url(${item.img})`;
+
+    document.getElementById("ficha-img").src = item.img;
+    document.getElementById("ficha-titulo").innerText = item.titulo;
+
+    document.getElementById("ficha-tipo").innerText = item.tipo.toUpperCase();
+    document.getElementById("ficha-año").innerText = item.año || "—";
+
+    document.getElementById("ficha-desc").innerText =
+        item.descripcion || "Sin descripción disponible";
+
+    document.getElementById("ficha-prota").innerText =
+        item.personaje || "—";
+}
+
+function goMultiverse() {
+    window.location.href = "multiverso.html"; // 🔥 tu página de simulación
+}
+
+function goHome() {
+    window.location.href = "../index.html";
+}
+
+function login() {
+    window.location.href = "index.html";
+}

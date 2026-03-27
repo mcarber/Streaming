@@ -240,3 +240,15 @@ document.addEventListener("DOMContentLoaded", function () {
     animate();
 
 });
+
+function goSim() {
+
+    // sonido click
+    const click = document.getElementById("click-sound");
+    if (click) click.play();
+
+    // redirección
+    setTimeout(() => {
+        window.location.href = "simulacion/login.html"; // 👉 tu simulación
+    }, 200);
+}
