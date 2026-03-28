@@ -249,6 +249,6 @@ function goSim() {
 
     // redirección
     setTimeout(() => {
-        window.location.href = "simulacion/login.html"; // 👉 tu simulación
+        window.location.href = "simulacion/index.html"; // 👉 tu simulación
     }, 200);
 }
