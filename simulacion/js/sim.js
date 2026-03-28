@@ -1,7 +1,205 @@
+const canvas = document.getElementById("space-canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+const PARTICLE_COUNT = 200;
+
+// 🖱️ ratón
+let mouse = {
+    x: canvas.width / 2,
+    y: canvas.height / 2
+};
+
+// 🌟 luciérnaga
+let firefly = {
+    x: canvas.width / 2,
+    y: canvas.height / 2,
+    size: 3
+};
+
+// 🌠 meteoritos
+let meteors = [];
+
+// ⭐ CREAR PARTÍCULAS (CON COLOR FIJO)
+for (let i = 0; i < PARTICLE_COUNT; i++) {
+
+    let size = Math.random() < 0.85
+        ? Math.random() * 0.8
+        : Math.random() * 1.5 + 0.5;
+
+    // 🎨 color SOLO una vez (no cada frame)
+    let color;
+    const rand = Math.random();
+
+    if (rand > 0.85) {
+        color = "rgba(200,220,255,1)";
+    } else if (rand > 0.7) {
+        color = "rgba(255,220,180,1)";
+    } else {
+        color = "rgba(255,255,255,1)";
+    }
+
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+
+        size: size,
+        color: color,
+
+        speedX: (Math.random() - 0.5) * 0.2,
+        speedY: (Math.random() - 0.5) * 0.2,
+
+        opacity: 1,
+        twinkle: Math.random() * 0.02
+    });
+}
+
+// 🌠 meteoritos
+function createMeteor() {
+    meteors.push({
+        x: Math.random() * canvas.width,
+        y: -50,
+        length: Math.random() * 80 + 60,
+        speed: Math.random() * 6 + 4,
+        opacity: 1
+    });
+}
+setInterval(createMeteor, 3000);
+
+// 🎬 ANIMACIÓN
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+
+        // movimiento
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+        // 💧 interacción suave
+        let dx = p.x - mouse.x;
+        let dy = p.y - mouse.y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+
+        let radius = 140;
+
+        if (dist < radius) {
+            let force = (radius - dist) / radius;
+            p.x += dx * force * 0.015;
+            p.y += dy * force * 0.015;
+        }
+
+        // 🔥 evitar errores de tamaño
+        const safeSize = Math.max(p.size, 0.5);
+        const glowRadius = safeSize * 6;
+
+        // 🌟 GLOW REAL
+        const gradient = ctx.createRadialGradient(
+            p.x, p.y, 0,
+            p.x, p.y, glowRadius
+        );
+
+        gradient.addColorStop(0, p.color);
+        gradient.addColorStop(0.2, "rgba(255,255,255,0.9)");
+        gradient.addColorStop(0.6, "rgba(255,255,255,0.2)");
+        gradient.addColorStop(1, "transparent");
+
+        ctx.fillStyle = gradient;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, safeSize * 3, 0, Math.PI * 2);
+        ctx.fill();
+
+        // ⚪ núcleo brillante
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, safeSize * 0.8, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    // 🌠 METEORITOS
+    meteors.forEach((m, i) => {
+
+        ctx.strokeStyle = `rgba(255,255,255,${m.opacity})`;
+        ctx.lineWidth = 1.5;
+
+        ctx.beginPath();
+        ctx.moveTo(m.x, m.y);
+        ctx.lineTo(m.x - m.length, m.y - m.length);
+        ctx.stroke();
+
+        m.x += m.speed;
+        m.y += m.speed;
+        m.opacity -= 0.01;
+
+        if (m.opacity <= 0) meteors.splice(i, 1);
+    });
+
+    // 🌟 LUCIÉRNAGA
+    firefly.x += (mouse.x - firefly.x) * 0.1;
+    firefly.y += (mouse.y - firefly.y) * 0.1;
+    firefly.y += Math.sin(Date.now() * 0.002) * 0.5;
+
+    let flicker = 20 + Math.sin(Date.now() * 0.004) * 6;
+
+    const glow = ctx.createRadialGradient(
+        firefly.x,
+        firefly.y,
+        0,
+        firefly.x,
+        firefly.y,
+        flicker
+    );
+
+    glow.addColorStop(0, "rgba(255,255,200,1)");
+    glow.addColorStop(0.4, "rgba(255,240,150,0.7)");
+    glow.addColorStop(1, "rgba(255,240,150,0)");
+
+    ctx.fillStyle = glow;
+
+    ctx.beginPath();
+    ctx.arc(firefly.x, firefly.y, 25, 0, Math.PI * 2);
+    ctx.fill();
+
+    // núcleo luciérnaga
+    ctx.fillStyle = "rgba(255,255,220,1)";
+    ctx.beginPath();
+    ctx.arc(
+        firefly.x + Math.random() * 0.6 - 0.3,
+        firefly.y + Math.random() * 0.6 - 0.3,
+        firefly.size + Math.random() * 0.3,
+        0,
+        Math.PI * 2
+    );
+    ctx.fill();
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// 🖱️ mouse
+window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+
+// 📱 resize
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+
 // ========================
 // DATA UNIVERSOS (GLOBAL)
 // ========================
-
 const DATA = {
 
     // ========================
@@ -707,6 +905,7 @@ if (searchInput && resultsBox) {
     // ========================
 
     const canvas = document.getElementById("space-canvas");
+    
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
@@ -808,5 +1007,7 @@ function goHome() {
 }
 
 function login() {
+    console.log("click login"); // para comprobar
+
     window.location.href = "index.html";
 }

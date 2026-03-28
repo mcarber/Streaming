@@ -6,16 +6,17 @@
 <link rel="stylesheet" href="css/sim.css">
 </head>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Login - Multiversal</title>
-<link rel="stylesheet" href="css/sim.css">
-</head>
-
 <body class="login-body">
+<header class="navbar">
+  <div class="logo">MULTIVERSAL</div>
 
+  <nav>
+    <a href="index.html" class="active">Memoria</a>
+    <a href="simulacion/index.html">Simulación</a>
+    <a>Explorar</a>
+    <a>Mi contenido</a>
+  </nav>
+</header>
 <canvas id="space-canvas"></canvas>
 
 <div class="login-box">
@@ -24,9 +25,9 @@
   <input placeholder="Email">
   <input placeholder="Contraseña">
 
-  <button onclick="login()">Entrar</button>
+  <button onclick="login()" >Entrar</button>
 </div>
-
+<script src="js/sim.js"></script>
 </body>
-</html>
+
 </html>

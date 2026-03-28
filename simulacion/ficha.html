@@ -7,7 +7,16 @@
 </head>
 
 <body class="ficha-body">
+<header class="navbar">
+  <div class="logo">MULTIVERSAL</div>
 
+  <nav>
+    <a href="index.html" class="active">Memoria</a>
+    <a href="simulacion/index.html">Simulación</a>
+    <a>Explorar</a>
+    <a>Mi contenido</a>
+  </nav>
+</header>
 <canvas id="space-canvas"></canvas>
 
 <div class="ficha-netflix">
@@ -19,6 +28,7 @@
         <img id="ficha-img" class="poster">
 
         <div class="info">
+            <button class="back-btn" onclick="window.close()">← Volver</button>
             <h1 id="ficha-titulo"></h1>
 
             <div class="meta">
@@ -48,7 +58,6 @@
     </div>
 
 </div>
-<button class="back-btn" onclick="window.close()">← Volver</button>
 <script src="js/sim.js"></script>
 </body>
 </html>
